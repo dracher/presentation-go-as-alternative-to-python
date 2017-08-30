@@ -178,14 +178,14 @@ export default class Presentation extends React.Component {
           </Layout>
           <Layout>
             <Appear>
-              <Fill>
+              <Fit>
                 <Text>hello_world.py</Text>
                 <CodePane
                   lang="python"
                   source={require('raw-loader!../assets/code/helloworld.py')}
                   margin="20px"
                 />
-              </Fill>
+              </Fit>
             </Appear>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Appear>
@@ -219,17 +219,31 @@ export default class Presentation extends React.Component {
                 Hello world, the time is: 2017-07-13 13:01:23.837155926 -0700
                 PDT
               </div>,
+              <Typist cursor={cursor}>$ ls</Typist>,
+              <div style={{ color: '#33B969' }}>
+                helloworld.go
+              </div>,
+              <Typist cursor={cursor}>$ go build -v .</Typist>,
               [
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <Loading type="bars" color="#fff" height="30" width="30" />
                   <span style={{ marginLeft: '1rem' }}>
-                    Installing dependencies...
                   </span>
                 </div>,
-                <div style={{ color: '#33B969' }}>
-                  ⚡️ Dependencies installed!
-                </div>
-              ]
+                <Typist cursor={cursor}>$ ls</Typist>,
+              ],
+              <div style={{ color: '#33B969' }}>
+                helloworld
+              </div>,
+              <Typist cursor={cursor}>$ ./helloworld</Typist>,
+              <div style={{ color: '#33B969' }}>
+              Hello world, the time is: 2017-07-13 13:01:23.837155926 -0700
+                PDT
+              </div>,
+              <Typist cursor={cursor}>$ go install -v . && ls $GOPATH/bin</Typist>,
+              <div style={{ color: '#33B969' }}>
+              helloworld*
+              </div>,
             ]}
           />
         </Slide>

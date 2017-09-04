@@ -17,6 +17,7 @@ import {
   List,
   Markdown,
   MarkdownSlides,
+  Notes,
   Quote,
   Slide,
   SlideSet,
@@ -42,16 +43,14 @@ require('../../src/themes/default/index.css');
 
 const images = {
   city: require('../assets/city.jpg'),
-  kat: require('../assets/kat.png'),
-  logo: require('../assets/formidable-logo.svg'),
-  markdown: require('../assets/markdown.png'),
   gopython: require('../assets/gopher-python.png'),
   boston: require('../assets/cities/boston.png'),
   chicago: require('../assets/cities/chicago.png'),
   losangeles: require('../assets/cities/losangeles.png'),
   miami: require('../assets/cities/miami.png'),
   phladelphia: require('../assets/cities/phladelphia.png'),
-  sandiego: require('../assets/cities/sandiego.png')
+  sandiego: require('../assets/cities/sandiego.png'),
+  bg01: require('../assets/bg01.jpg')
 };
 
 preloader(images);
@@ -120,6 +119,7 @@ export default class Presentation extends React.Component {
               </ListItem>
             </Appear>
           </List>
+          <Notes>some notes here it is</Notes>
         </Slide>
 
         {/* Page03 */}
@@ -170,7 +170,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         {/* Page05 */}
-        <Slide style={skylineBg(images.miami)} transition={['spin']}>
+        <Slide
+          style={skylineBg(images.miami)}
+          transition={['spin']}
+          align="center top"
+        >
           <Layout>
             <Text textColor="white" textSize={80}>
               Hello World
@@ -202,7 +206,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         {/* Page06 */}
-        <Slide style={skylineBg(images.phladelphia)} transition={['spin']}>
+        <Slide
+          style={skylineBg(images.phladelphia)}
+          transition={['spin']}
+          align="center top"
+        >
           <Text caps textColor="tertiary">
             How to Run or Compile?
           </Text>
@@ -220,32 +228,100 @@ export default class Presentation extends React.Component {
                 PDT
               </div>,
               <Typist cursor={cursor}>$ ls</Typist>,
-              <div style={{ color: '#33B969' }}>
-                helloworld.go
-              </div>,
+              <div style={{ color: '#33B969' }}>helloworld.go</div>,
               <Typist cursor={cursor}>$ go build -v .</Typist>,
               [
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <Loading type="bars" color="#fff" height="30" width="30" />
-                  <span style={{ marginLeft: '1rem' }}>
-                  </span>
+                  <span style={{ marginLeft: '1rem' }} />
                 </div>,
-                <Typist cursor={cursor}>$ ls</Typist>,
+                <Typist cursor={cursor}>$ ls</Typist>
               ],
-              <div style={{ color: '#33B969' }}>
-                helloworld
-              </div>,
+              <div style={{ color: '#33B969' }}>helloworld</div>,
               <Typist cursor={cursor}>$ ./helloworld</Typist>,
               <div style={{ color: '#33B969' }}>
-              Hello world, the time is: 2017-07-13 13:01:23.837155926 -0700
+                Hello world, the time is: 2017-07-13 13:01:23.837155926 -0700
                 PDT
               </div>,
-              <Typist cursor={cursor}>$ go install -v . && ls $GOPATH/bin</Typist>,
-              <div style={{ color: '#33B969' }}>
-              helloworld*
-              </div>,
+              <Typist cursor={cursor}>
+                $ go install -v . && ls $GOPATH/bin
+              </Typist>,
+              <div style={{ color: '#33B969' }}>helloworld*</div>
             ]}
           />
+        </Slide>
+
+        {/* Page07 */}
+        <Slide transition={['spin']} style={skylineBg(images.bg01)}>
+          <Heading size={4} caps textColor="white" lineHeight={1.2}>
+            how do we use go in automation testing in our practical work
+          </Heading>
+        </Slide>
+
+        <Slide style={skylineBg(images.miami)} align="center top">
+          <Heading size={4} lineHeight={1.2}>
+            Golang produce stand-alone, portable executable
+          </Heading>
+          <Heading size={6} lineHeight={1.2} textColor="white">
+            That's gonna give a few advantages
+          </Heading>
+          <List>
+            <ListItem>No dependency in most cases</ListItem>
+            <ListItem>easy deployment</ListItem>
+            <ListItem>no contamination to test environment</ListItem>
+            <ListItem>perfect for agent based auto-testing model</ListItem>
+          </List>
+        </Slide>
+
+        {/* Page08 */}
+        <Slide>
+          <Heading size={4} caps textColor="white" lineHeight={1.2}>
+            TODO: a example
+          </Heading>
+        </Slide>
+
+        <Slide style={skylineBg(images.chicago)}>
+          <Heading size={4} lineHeight={1.2}>
+            Go self-contained, relatively rich supporting library
+          </Heading>
+          <Heading size={6} lineHeight={1.2} textColor="white">
+            make it's a good choice to act as api proxy or wrapper layer
+          </Heading>
+        </Slide>
+
+        {/* Page09 */}
+        <Slide style={skylineBg(images.boston)}>
+          <Heading size={4} lineHeight={1.2}>
+            Golang as sidekick
+          </Heading>
+          <Heading size={6} lineHeight={1.2} textColor="white">
+            Integration With Existing Project
+          </Heading>
+        </Slide>
+
+        {/* Page10 */}
+        <Slide>
+          <Heading size={4} caps textColor="white" lineHeight={1.2}>
+            TODO: a example
+          </Heading>
+        </Slide>
+
+        {/* Page11 */}
+        <Slide style={skylineBg(images.chicago)}>
+          <Heading size={4} lineHeight={1.2}>
+            Tools picked from go echo system
+          </Heading>
+          <br />
+          <Heading size={6} lineHeight={1.2} textColor="white">
+            Helpful for automation testing
+          </Heading>
+        </Slide>
+
+        {/* Page12 */}
+        <Slide>
+          <Heading size={4} caps textColor="white" lineHeight={1.2}>
+            TODO: a example
+          </Heading>
         </Slide>
       </Deck>
     );

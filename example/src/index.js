@@ -284,8 +284,8 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={1.2}>
             Go self-contained, relatively rich supporting library
           </Heading>
-          <Heading size={6} lineHeight={1.2} textColor="white">
-            make it's a good choice to act as api proxy or wrapper layer
+          <Heading size={6} lineHeight={1.2} textColor="blue">
+            Make it's a good choice to act as api proxy or wrapper layer
           </Heading>
         </Slide>
 
@@ -294,7 +294,7 @@ export default class Presentation extends React.Component {
           <Heading size={4} lineHeight={1.2}>
             Golang as sidekick
           </Heading>
-          <Heading size={6} lineHeight={1.2} textColor="white">
+          <Heading size={6} lineHeight={1.2} textColor="blue">
             Integration With Existing Project
           </Heading>
         </Slide>
@@ -312,7 +312,7 @@ export default class Presentation extends React.Component {
             Tools picked from go echo system
           </Heading>
           <br />
-          <Heading size={6} lineHeight={1.2} textColor="white">
+          <Heading size={6} lineHeight={1.2} textColor="blue">
             Helpful for automation testing
           </Heading>
         </Slide>

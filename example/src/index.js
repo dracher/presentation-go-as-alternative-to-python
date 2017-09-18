@@ -180,6 +180,7 @@ export default class Presentation extends React.Component {
               Hello World
             </Text>
           </Layout>
+          <br />
           <Layout>
             <Appear>
               <Fit>
@@ -188,6 +189,7 @@ export default class Presentation extends React.Component {
                   lang="python"
                   source={require('raw-loader!../assets/code/helloworld.py')}
                   margin="20px"
+                  textSize={18}
                 />
               </Fit>
             </Appear>
@@ -199,6 +201,7 @@ export default class Presentation extends React.Component {
                   lang="go"
                   source={require('raw-loader!../assets/code/helloworld.go')}
                   margin="20px"
+                  textSize={18}
                 />
               </Fill>
             </Appear>
@@ -228,6 +231,7 @@ export default class Presentation extends React.Component {
                 PDT
               </div>,
               <Typist cursor={cursor}>$ ls</Typist>,
+              <div style={{ color: '#33B969' }}>helloworld.py</div>,
               <div style={{ color: '#33B969' }}>helloworld.go</div>,
               <Typist cursor={cursor}>$ go build -v .</Typist>,
               [
@@ -238,6 +242,8 @@ export default class Presentation extends React.Component {
                 <Typist cursor={cursor}>$ ls</Typist>
               ],
               <div style={{ color: '#33B969' }}>helloworld</div>,
+              <div style={{ color: '#33B969' }}>helloworld.go</div>,
+              <div style={{ color: '#33B969' }}>helloworld.py</div>,
               <Typist cursor={cursor}>$ ./helloworld</Typist>,
               <div style={{ color: '#33B969' }}>
                 Hello world, the time is: 2017-07-13 13:01:23.837155926 -0700
@@ -270,14 +276,83 @@ export default class Presentation extends React.Component {
             <ListItem>easy deployment</ListItem>
             <ListItem>no contamination to test environment</ListItem>
             <ListItem>perfect for agent based auto-testing model</ListItem>
+            <ListItem>easy to make daemon service</ListItem>
           </List>
         </Slide>
 
         {/* Page08 */}
-        <Slide>
-          <Heading size={4} caps textColor="white" lineHeight={1.2}>
-            TODO: a example
+        <Slide style={skylineBg(images.phladelphia)} align="center top">
+          <Heading size={4} lineHeight={1.2}>
+            1st Example
           </Heading>
+          <br />
+          <Text bold textAlign="left">
+            Requirments:
+          </Text>
+          <List>
+            <ListItem>
+              monitor screen output, in this case, a series of interactive
+              questions
+            </ListItem>
+            <ListItem>base on data above, simlate user key stroke</ListItem>
+          </List>
+          <Appear>
+            <CodePane
+              textSize={18}
+              source={require('raw-loader!../assets/code/answers.txt')}
+            />
+          </Appear>
+        </Slide>
+
+        {/* Page08-2 */}
+        <Slide style={skylineBg(images.losangeles)} align="center top">
+          <Heading size={4} lineHeight={1.2}>
+            1st Example
+          </Heading>
+          <br />
+          <Text bold textAlign="left">
+            Previous python version Solution:
+          </Text>
+          <br />
+          <Text textAlign="left">
+            it's doable with <code>python-uinput</code>, but there were serval
+            issues in practical:
+          </Text>
+          <List>
+            <Appear>
+              <ListItem>need install dependency package</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                not pure python implementation, c libary needed
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>our test object has read-only filesystem</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>python major version problem</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+
+        {/* Page08 */}
+        <Slide style={skylineBg(images.boston)} align="center top">
+          <Heading size={4} lineHeight={1.2}>
+            1st Example
+          </Heading>
+          <br />
+          <Text bold textAlign="left">
+            Current Go version Solution:
+          </Text>
+          <br />
+          <br />
+          <Appear>
+            <Text>
+              Just one binary, simply upload and run, no dependency after
+              finish, just simply delete self, no left over
+            </Text>
+          </Appear>
         </Slide>
 
         <Slide style={skylineBg(images.chicago)}>
@@ -289,38 +364,93 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        {/* Page09 */}
-        <Slide style={skylineBg(images.boston)}>
+        {/* Page08 */}
+        <Slide style={skylineBg(images.phladelphia)}>
           <Heading size={4} lineHeight={1.2}>
-            Golang as sidekick
+            2nd Example
           </Heading>
-          <Heading size={6} lineHeight={1.2} textColor="blue">
-            Integration With Existing Project
-          </Heading>
+          <br />
+          <Text textAlign="left">
+            A errata package information fetcher application, mainly used for package version comparison between packages built into our build and errat, to check if correct package has been included.
+          </Text>
+          <br/>
         </Slide>
 
-        {/* Page10 */}
-        <Slide>
-          <Heading size={4} caps textColor="white" lineHeight={1.2}>
-            TODO: a example
+        {/* Page09 */}
+        <Slide style={skylineBg(images.boston)} align="center top">
+          <Heading size={4} lineHeight={1.2}>
+            2nd Example
           </Heading>
+          <br />
+          <Text bold textAlign="left">
+            A errata package information fetcher application
+          </Text>
+          <br />
+          <Text textAlign="left">Requirments:</Text>
+
+          <List>
+            <Appear>
+              <ListItem>
+                backend fetch informatio from errata and our test object.
+                analyze then expose results with rest api
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                frontend prsent results in friendly way, and also provide some
+                filter fucntion
+              </ListItem>
+            </Appear>
+          </List>
+
+          <Appear>
+            <Text>
+              Compare to python version, go version is a self contained binary.
+            </Text>
+          </Appear>
+          <br/>
+          <Appear>
+            <Text bold>
+              A actual demo
+            </Text>
+          </Appear>
         </Slide>
 
         {/* Page11 */}
-        <Slide style={skylineBg(images.chicago)}>
+        <Slide style={skylineBg(images.chicago)} align="center top">
           <Heading size={4} lineHeight={1.2}>
             Tools picked from go echo system
           </Heading>
           <br />
           <Heading size={6} lineHeight={1.2} textColor="blue">
-            Helpful for automation testing
+            Helpful for automation testing (my point of view, and somewhat subjective)
           </Heading>
+          <List>
+            <ListItem>
+              <Link href="https://github.com/gin-gonic/gin">Gin -- python equivalent <code>Flask Django</code> </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/gavv/httpexpect">httpexpect -- End-to-end HTTP and REST API testing</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/restic/restic">restic -- Fast, secure, efficient backup program</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/nsqio/nsq">nsq -- A realtime distributed messaging platform</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/boltdb/bolt">boltdb -- An embedded key/value database for Go. <code>sqlite</code></Link>
+            </ListItem>
+            <ListItem>
+              <Link href="https://github.com/asdine/storm">storm -- Simple and powerful toolkit for BoltDB</Link>
+            </ListItem>
+          </List>
         </Slide>
 
         {/* Page12 */}
         <Slide>
-          <Heading size={4} caps textColor="white" lineHeight={1.2}>
-            TODO: a example
+          <Heading size={1} caps textColor="white" lineHeight={1.2}>
+            Q & A
           </Heading>
         </Slide>
       </Deck>
